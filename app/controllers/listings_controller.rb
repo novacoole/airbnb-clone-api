@@ -11,8 +11,8 @@ class ListingsController < ApplicationController
   end 
 
   def create 
-    Listing.create(listing_params)
-    render json: "listing created", status: 200 
+    @listing = Listing.create(listing_params)
+    render json: "listing created with id of #{@listing.id}", status: 200 
   end 
 
   def update 
@@ -28,7 +28,7 @@ class ListingsController < ApplicationController
   private 
 
   def listing_params 
-    params.require(:listing).permit(:title, :description, :url)
+    params.require(:listing).permit(:name, :neighbourhood, :latitude, :longitude, :room_type, :price, :minimum_nights)
   end 
 
   def set_listing 
