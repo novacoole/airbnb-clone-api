@@ -79,7 +79,7 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  Rails.application.routes.default_url_options[:host] = 'https://https://fast-peak-00857.herokuapp.com/'
+  Rails.application.routes.default_url_options[:host] = 'fast-peak-00857.herokuapp.com'
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
