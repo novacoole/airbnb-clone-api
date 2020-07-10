@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :update, :destroy]
 
   def index 
-    @listings = Listing.last(100).reverse
+    @listings = Listing.all
     render json: @listings
   end 
 
