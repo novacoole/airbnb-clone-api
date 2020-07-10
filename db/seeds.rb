@@ -17,6 +17,8 @@ require 'open-uri'
 
 Listing.all.each_with_index do |listing,index|
   photo = open('https://source.unsplash.com/400x300/?house')
-  listing.photo.attach(io: photo, filename: "photo#{index}.jpeg")
-  console.log('attached')
+  listing.photo.attach(io: photo, filename: "photo#{index}.jpeg", content_type: 'image/jpg')
+  if listing.save
+    console.log('attached')
+  end
 end
