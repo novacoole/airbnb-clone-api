@@ -3,11 +3,11 @@ class ListingsController < ApplicationController
 
   def index 
     @listings = Listing.all
-    render json: @listings
+    render json: @listings, methods: :photo_url 
   end 
 
   def show 
-    render json: @listing
+    render json: @listing, methods: :photo_url
   end 
 
   def create 
